@@ -7,13 +7,22 @@ name = "merge-image-layer"
 version = "0.1.0"
 description = "merge-image-layer"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "Pillow>=10.0",
+    "PyMuPDF>=1.24",
+]
+
+[project.scripts]
+merge-image-layer = "merge_image_layer.main:main"
 
 [project.optional-dependencies]
 dev = [
     "pytest>=7.0",
     "ruff>=0.4",
     "mypy>=1.0",
+]
+build = [
+    "pyinstaller>=6.0",
 ]
 
 [tool.setuptools.packages.find]
