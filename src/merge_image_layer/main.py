@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import platform
 import subprocess
 import tkinter as tk
@@ -37,7 +38,7 @@ def _open_folder(folder: str) -> None:
     if system == "Darwin":
         subprocess.Popen(["open", folder])
     elif system == "Windows":
-        subprocess.Popen(["explorer", folder])
+        subprocess.Popen(["explorer", os.path.normpath(folder)])
     else:
         subprocess.Popen(["xdg-open", folder])
 
